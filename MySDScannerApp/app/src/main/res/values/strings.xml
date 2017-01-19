@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MySDScannerApp</string>
+    <string name="string_serviceRunning">Service Running</string>
+    <string name="string_frequency">Extension and Frequency</string>
+    <string name="string_average">Average</string>
+    <string name="string_tenBigFiles">Top 10 big files</string>
+    <string name="string_scanState">scanState</string>
+    <string name="string_stopScan">Stop Scan</string>
+    <string name="string_startScan">Start Scan</string>
+</resources>
