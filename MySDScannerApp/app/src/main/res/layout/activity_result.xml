@@ -48,37 +48,6 @@
                 android:layout_margin="5dp"
                 android:textSize="14sp"
                 />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:background="@color/colorPrimaryDark"
-                />
-
-            <TextView
-                android:id="@+id/tv_label_bigFiles"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:text="@string/string_tenBigFiles"
-                android:textSize="14sp"
-                />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:background="@color/colorAccent"
-                />
-
-            <TextView
-                android:id="@+id/tv_result"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:textSize="14sp"
-                />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
@@ -109,6 +78,47 @@
                 android:layout_margin="5dp"
                 android:textSize="14sp"
                 />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorPrimaryDark"
+                />
+
+            <TextView
+                android:id="@+id/tv_label_bigFiles"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@string/string_tenBigFiles"
+                android:textSize="14sp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorAccent"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_filesList"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                android:scrollbars="vertical">
+            </android.support.v7.widget.RecyclerView>
+
+
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_result"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_margin="5dp"-->
+            <!--android:textSize="14sp"-->
+            <!--/>-->
         </LinearLayout>
     </ScrollView>
 

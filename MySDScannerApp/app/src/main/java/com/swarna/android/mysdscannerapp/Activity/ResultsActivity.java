@@ -3,11 +3,14 @@ package com.swarna.android.mysdscannerapp.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.swarna.android.mysdscannerapp.Adapter.FilesAdapter;
 import com.swarna.android.mysdscannerapp.AppData;
 import com.swarna.android.mysdscannerapp.Methods;
 import com.swarna.android.mysdscannerapp.Model.FileInfo;
@@ -28,6 +31,9 @@ public class ResultsActivity extends AppCompatActivity
     private TextView tv_average;
     private TextView tv_frequency;
     private Toolbar toolbar;
+    private LinearLayoutManager mLayoutManager;
+    private RecyclerView rv_filesList;
+    private FilesAdapter filesAdapter;
     FileInfo fileInfo;
     String averageValue;
 
@@ -37,9 +43,10 @@ public class ResultsActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        tv_result = (TextView) findViewById(R.id.tv_result);
+        //tv_result = (TextView) findViewById(R.id.tv_result);
         tv_average = (TextView) findViewById(R.id.tv_avg);
         tv_frequency = (TextView) findViewById(R.id.tv_frequency);
+        rv_filesList = (RecyclerView) findViewById(R.id.rv_filesList);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         assert toolbar != null;
@@ -53,7 +60,11 @@ public class ResultsActivity extends AppCompatActivity
         fileInfo = new FileInfo(updatedMap);
         averageValue = String.format("Average file size : %4f MB",fileInfo.calculateAvg(updatedMap) );
 
-        tv_frequency.setText(Methods.itemsToString(FrequencyGenerator.itemFrequency,"\n"));
+        mLayoutManager = new LinearLayoutManager(this);
+        rv_filesList.setLayoutManager(mLayoutManager);
+        filesAdapter = new FilesAdapter(this);
+        rv_filesList.setAdapter(filesAdapter);
+        filesAdapter.notifyDataSetChanged();
 
         System.out.println("RESULT"+ (Methods.itemsToString(result,"\n")));
         setResult();
@@ -87,7 +98,8 @@ public class ResultsActivity extends AppCompatActivity
     private void setResult()
     {
         tv_average.setText(averageValue);
-        tv_result.setText(Methods.itemsToString(result,"\n"));
+        tv_frequency.setText(Methods.itemsToString(FrequencyGenerator.itemFrequency,"\n"));
+      //  tv_result.setText(Methods.itemsToString(result,"\n"));
     }
 
     @Override

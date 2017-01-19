@@ -7,4 +7,6 @@
     <string name="string_scanState">scanState</string>
     <string name="string_stopScan">Stop Scan</string>
     <string name="string_startScan">Start Scan</string>
+    <string name="string_name">Name</string>
+    <string name="string_size">Size</string>
 </resources>
