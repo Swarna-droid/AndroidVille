@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MatrixApp</string>
+    <string name="input_number_of_rows_and_column">Input number of rows and column</string>
+    <string name="submit">Submit</string>
+    <string name="columns">columns</string>
+    <string name="rows">rows</string>
+</resources>
