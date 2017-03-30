@@ -8,36 +8,53 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 /**
  * Created by Swarna Tripathi on 3/28/2017.
  */
 
 public class GridViewCustomAdapter extends BaseAdapter {
 
-
     Activity mActivity;
-    ArrayList<Integer> items;
+    int[][] gridItems;
+    int count, rowPosition, columnPosition;
 
     private static LayoutInflater inflater = null;
 
-    public GridViewCustomAdapter(Activity activity ,ArrayList<Integer> items ) {
+    public GridViewCustomAdapter(Activity activity ,int[][] items ) {
         mActivity = activity;
-        items = items;
+
+        count = 0;
+        gridItems = new int[items.length][items[0].length];
+        for (int i = 0; i < gridItems.length; i++)
+        {
+            for (int j = 0; j < gridItems[i].length; j++)
+            {
+                gridItems[i][j] = items[i][j];
+                count++;
+            }
+        }
+        rowPosition = 0;
+        columnPosition = 0;
     }
 
     @Override
     public final int getCount() {
 
-        return items.size();
+        return count;
+    }
 
+    public int getRowCount() {
+        return gridItems.length;
+    }
+
+    public int getColumnCount() {
+        return gridItems[0].length;
     }
 
     @Override
     public final Object getItem(int position)
     {
-        return items.get(position);
+        return null;
     }
 
     @Override
@@ -55,7 +72,9 @@ public class GridViewCustomAdapter extends BaseAdapter {
         view = inflater.inflate(R.layout.item, null);
 
         TextView tv_item = (TextView) view.findViewById(R.id.tv_item);
-        tv_item.setText(items.get(position));
+        tv_item.setText(String.valueOf(gridItems[position][position]));
+
+        System.out.println("MATRIX : " + String.valueOf(gridItems[position][position]));
 
         return view;
     }

@@ -11,4 +11,5 @@ public class AppData
     public static String path = null;
     public static int rows = 0;
     public static int column = 0;
+    public static int[][] grid = null;
 }

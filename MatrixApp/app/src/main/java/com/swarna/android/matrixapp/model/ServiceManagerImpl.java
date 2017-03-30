@@ -17,12 +17,6 @@ public class ServiceManagerImpl
     //public static PathGrid pg = new PathGrid();
     public static int[][] grid = PathGrid.getPathGrid(AppData.rows,AppData.column);
 
-//    public static void main(String[] args)
-//    {
-//        grid = PathGrid.getPathGrid();
-//        searchLowestCostPath(0,0);
-//    }
-
     public static void searchLowestCostPath(int rowIndex, int colIndex)
     {
         Cell first = getFirstCell(rowIndex, colIndex);
