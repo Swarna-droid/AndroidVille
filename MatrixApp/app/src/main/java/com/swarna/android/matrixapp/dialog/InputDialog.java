@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import com.swarna.android.matrixapp.R;
 
+import java.util.ArrayList;
+
 /**
  * Created by Swarna Tripathi on 3/29/2017.
  */
@@ -30,7 +32,8 @@ public class InputDialog extends DialogFragment implements View.OnClickListener
     int[][] matrixValues;
 
     Button bt_submit;
-    TableLayout tableLayout;
+    private TableLayout tableLayout;
+    private EditText edit;
 
     int text;
     public InputDialog() {}
@@ -67,22 +70,21 @@ public class InputDialog extends DialogFragment implements View.OnClickListener
             TableRow row = new TableRow(context);
             row.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
 
-
             for (int j = 0; j < m; j++)
             {
-                EditText edit = new EditText(context);
+                edit = new EditText(context);
                 edit.setLayoutParams(new TableRow.LayoutParams(100, 100));
                 edit.setInputType(InputType.TYPE_CLASS_NUMBER);
                 edit.setTextSize(12);
 
                 row.addView(edit);
               //  edit.setText(Integer.toString(matrix[i][j]));
+                if(edit.getText().toString().trim()!=null)
+                {
+
+                }
                 matrixValues = new int [i][j];
 
-                if(edit.getText().toString()!= null)
-                {
-                    text = Integer.parseInt(edit.getText().toString());
-                }
             }
             table.addView(row);
         }
@@ -93,8 +95,19 @@ public class InputDialog extends DialogFragment implements View.OnClickListener
     {
         if(v == bt_submit)
         {
-            System.out.println(" VALUES..." + matrixValues);
+            int count =0;
+            ArrayList<Integer> input = new ArrayList<>();
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    System.out.println("COUNT " + count++);
+                    input.add(Integer.parseInt(edit.getText().toString()));
+                    System.out.println("VAL" + input.size());
+                }
+            }
 
+            System.out.println("VALo" + input.size());
         }
     }
 }
