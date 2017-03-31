@@ -1,4 +1,4 @@
-package com.swarna.android.matrixapp;
+package com.photon.challenge;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.swarna.android.matrixapp", appContext.getPackageName());
+        assertEquals("com.photon.challenge", appContext.getPackageName());
     }
 }

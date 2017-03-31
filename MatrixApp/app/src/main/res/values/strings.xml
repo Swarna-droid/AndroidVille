@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">MatrixApp</string>
-    <string name="input_number_of_rows_and_column">Input number of rows and column</string>
-    <string name="generate">Generate</string>
-    <string name="columns">columns</string>
-    <string name="rows">rows</string>
-    <string name="submit">Submit</string>
+    <string name="tv_heading">Enter the number of Rows and Columns</string>
+    <string name="hint_col">Enter Columns</string>
+    <string name="hint_row">Enter Rows</string>
 </resources>
