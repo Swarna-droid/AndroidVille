@@ -1,0 +1,16 @@
+<resources>
+
+    <string name="app_name">TheMovieDatabaseApp</string>
+    <string name="my_api_key">869ce90062563bd70ce52f10f3e62dda</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="string_title">Title</string>
+    <string name="string_release_date">Release Date</string>
+    <string name="string_popularity">Popularity</string>
+    <string name="edit_message">Type a movie to search..</string>
+    <string name="button_send">Search</string>
+    <string name="button_submit">Submit</string>
+    <string name="title_activity_imdbsearch_result">TMDBSearchResultActivity</string>
+
+
+</resources>
